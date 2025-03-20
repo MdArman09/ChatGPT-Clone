@@ -71,7 +71,7 @@ Contributions are welcome! Feel free to **open an issue** or submit a **pull req
 
 This project is licensed under the **MIT License**.
 
-## 💡 Author
+## 👨‍💻 Author  
 
 👤 **Md Arman Alam**  
 📧 Email: [md4577963@gmail.com](mailto:md45577963@gmail.com)  
