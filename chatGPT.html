@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Clone</title>
+    <link rel="icon" href="chatbot.jpg" type="Image/ChatGPT Icon">
+
+    <link rel="stylesheet" href="ChatGPT.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0
+    ">
+    <script src="chatGPT.js" defer></script>
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+</head>
+
+<body> <!--class="light-mode" -->
+    <img src="ChatGPT-Logo.png" alt="ChatGPT-Logo" class="ChatGPT-Logo" width="65px" height="35px">
+    <div id="helpText">How Can I Help You Today?</div>
+    <!-- Chat Container -->
+    <div class="chat-container">
+        <!-- <div class="chat outgoing">
+            <div class="chat-content">
+                <div class="chat-details">
+                    <img src="user.jpg" alt="user-img">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id, corrupti.</p>
+                </div>
+            </div>
+        </div>
+        <div class="chat incoming">
+            <div class="chat-content">
+                <div class="chat-details">
+                    <img src="chatbot.jpg" alt="Chatbot-img">
+                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, repellendus!</p> -->
+        <!-- </div>
+                 <span class="material-symbols-outlined"> content_copy </span>
+            </div>
+        </div>
+            <div class="chat incoming">
+                <div class="chat-content">
+                    <div class="chat-details">
+                        <img src="chatbot.jpg" alt="Chatbot-img">
+                         <div class="typing-animation">
+                           <div class="typing-dot"style ="--delay:0.2s"></div> 
+                           <div class="typing-dot"style ="--delay:0.3s"></div> 
+                           <div class="typing-dot"style ="--delay:0.4s"></div> 
+                         </div>
+                    </div>
+                     <span class="material-symbols-outlined">content_copy</span>
+                </div>
+            </div> -->
+        <!-- <div class="chat outgoing">
+                <div class="chat-content">
+                    <div class="chat-details">
+                        <img src="user.jpg" alt="user-img">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id, corrupti.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat incoming">
+                <div class="chat-content">
+                    <div class="chat-details">
+                        <img src="chatbot.jpg" alt="Chatbot-img">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore esse mollitia, enim repudiandae impedit quo excepturi sapiente cum iure nobis, cumque iusto saepe voluptate, modi nisi provident repellat amet doloremque? Officia, ipsa. Architecto, debitis aliquam. Voluptate optio iste praesentium blanditiis omnis, perferendis voluptas maiores, perspiciatis qui, minus eaque ea aliquid.</p>
+                    </div>
+                     <span class="material-symbols-outlined">content_copy</span>
+                </div>
+            </div>
+            <div class="chat outgoing">
+                <div class="chat-content">
+                    <div class="chat-details">
+                        <img src="user.jpg" alt="user-img">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id, corrupti.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat incoming">
+                <div class="chat-content">
+                    <div class="chat-details">
+                        <img src="chatbot.jpg" alt="Chatbot-img">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem esse est mollitia eveniet possimus cupiditate sint facilis in, porro eius suscipit fuga modi vel ea, molestiae sed laborum voluptates iste.</p>
+                    </div>
+                     <span class="material-symbols-outlined">content_copy</span>
+                </div>
+            </div>
+            <div class="chat outgoing">
+                <div class="chat-content">
+                    <div class="chat-details">
+                        <img src="user.jpg" alt="user-img">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id, corrupti.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat incoming">
+                <div class="chat-content">
+                    <div class="chat-details">
+                        <img src="chatbot.jpg" alt="Chatbot-img">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, repellendus!</p>
+                    </div>
+                     <span class="material-symbols-rounded">content copy</span>
+                </div>
+            </div>
+            <div class="chat outgoing">
+                <div class="chat-content">
+                    <div class="chat-details">
+                        <img src="user.jpg" alt="user-img">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id, corrupti.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat incoming">
+                <div class="chat-content">
+                    <div class="chat-details">
+                        <img src="chatbot.jpg" alt="Chatbot-img">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque vero soluta quisquam cum quis ipsum in fuga unde voluptate quos corporis nesciunt, asperiores quae ea! Nobis quo est placeat a.</p>
+                    </div>
+                     <span class="material-symbols-rounded">content_copy</span>
+                </div>
+            </div> -->
+        <!-- </div> -->
+        <!-- typing container -->
+        <div class="typing-container">
+            <div class="typing-content">
+                <div class="typing-textarea">
+                    <input type="file" id="file-input" hidden>
+                    <label for="file-input" class="material-symbols-outlined" id="attach-btn" accept="image/*, .pdf">attach_file</label>
+                    <textarea id="chat-input" placeholder="Enter a prompt here..." required></textarea>
+                    <span id="send-btn" class="material-symbols-outlined">send</span>
+                 </div>
+                <div class="typing-controls">
+                    <span id="theme-btn" class="material-symbols-outlined">light_mode</span>
+                    <span id="delete-btn" class="material-symbols-outlined">delete</span>
+                    <span id="download-chat" class="material-symbols-outlined download" disabled>download</span>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+        <!-- <button id="download-chat">Download Chat History</button> -->
+        <!-- Download Chat History Button -->
+        <!-- <span id="download-chat" class="material-symbols-outlined">download</span> -->
+</body>
+
+</html>

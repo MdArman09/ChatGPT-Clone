@@ -1,0 +1,360 @@
+@import url('https //fonts.googleapis.com/css family=poppins');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+}
+:root{
+    --text-color: #ffffff;
+    --icon-color:#acacbe;
+    --icon-hover-bg:#5b5e71;
+    --placeholder-color:#cccccc;
+    --outgoing-chat-bg:#343541;
+    --incoming-chat-bg:#444654;
+    --outgoing-chat-border:#343541;
+    --incoming-chat-border:#444654;
+    --border-dark: #333; 
+}
+.light-mode{
+    --text-color: #343541; 
+    --icon-color:#666666;
+    --icon-hover-bg:#f1f1f3;
+    --placeholder-color:#666666; 
+    --outgoing-chat-bg:#ffffff;
+    --incoming-chat-bg:#cecdcd57;
+    --outgoing-chat-border:#000;
+    --incoming-chat-border:#000;
+    --border-dark: #000;
+}
+
+.typing-textarea textarea::placeholder {
+    color: var(--placeholder-color);
+}
+
+span.material-symbols-outlined {
+    color: var(--icon-color);
+}
+
+.typing-controls span {
+    color: var(--icon-color); /* This will affect both theme and delete icons */
+}
+
+body{
+    background: var(--outgoing-chat-bg);
+}
+/* Chat Container Styling */
+.chat-container{
+    max-height: 100vh;
+    padding-bottom: 150px;
+    overflow-y: auto; 
+}
+:where(.chat-container, textarea)::-webkit-scrollbar{
+    width: 6px;
+}
+:where(.chat-container, textarea)::-webkit-scrollbar-track{
+     background: var(--incoming-chat-bg);
+     border-radius: 25px;
+}
+:where(.chat-container, textarea)::-webkit-scrollbar-thumb{
+    background: var(--icon-color);
+    border-radius: 25px;
+}
+
+.chat-container .chat{
+    padding: 25px 10px;
+    display: flex;
+    justify-content: center;
+    color: var(--text-color);
+}
+.chat-container .chat.outgoing {
+    background: var(--outgoing-chat-bg);
+    border: 0px   var(--outgoing-chat-border);
+}
+.chat-container .chat.incoming {
+    background: var(--incoming-chat-bg);
+    border: 0px   var(--incoming-chat-border);
+}
+.chat .chat-content{  
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.chat .chat-content span{
+    font-size: 1.3rem;
+    color: var(--icon-color);
+    visibility: hidden;
+}
+.chat:hover .chat-content:not(:has(.typing-animation)) span{
+    visibility: visible;
+
+}
+.chat .chat-details{
+    display: flex;
+    align-items: center;
+}
+.chat .chat-details img{
+    margin: 0.5px;
+    width: 35px;
+    height: 35px;
+    align-self: flex-start;
+    object-fit: cover;
+    border-radius: 2px;
+}
+.chat .chat-details p{
+    white-space: pre-wrap;
+    font-size: 1.05rem;
+    padding: 0 50px 0 25px;
+}
+span.material-symbols-outlined{
+    user-select: none;
+    cursor: pointer;
+}
+.typing-animation{
+    display: inline-flex;
+    padding-left: 25px;
+}
+.typing-animation .typing-dot{
+    height: 7px;
+    width: 7px;
+    opacity: 0.7;
+    margin: 0 3px;
+    border-radius: 50%;
+    background: var(--text-color);
+    animation: animateDots 1.5s var(--delay) infinite;
+}
+@keyframes animateDots {
+    0%,44% {
+        transform: translateY(0px);
+    }
+    22% {
+        opacity: 0.4;
+        transform: translateY(-6px);
+    }
+    44% {
+        opacity: 0.2;
+    }
+}
+
+/* Typing Container Styling */
+.typing-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    padding: 20px 10px;
+    justify-content: center;
+    background: var(--outgoing-chat-bg);
+    border: 1px solid var(--incoming-chat-border);
+}
+.typing-container .typing-content{
+    max-width: 950px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+.typing-content .typing-textarea{
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+.typing-textarea textarea{
+    width: 100%;
+    height: 55px;
+    border: 1px solid var(--incoming-chat-bg);
+    resize: none;
+    padding: 15px 45px 15px 20px;
+    border-radius: 4px;
+    color: var(--text-color);
+    background: var(--incoming-chat-bg);
+    outline: 0px solid var(--incoming-chat-border);
+}
+.typing-textarea textarea::placeholder {
+    color: var(--placeholder-color);
+}
+.typing-textarea span {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+}
+.typing-textarea textarea:valid  ~ span {
+    visibility: visible;
+}
+.typing-content span{
+    height: 55px;
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--icon-color);
+}
+.typing-controls{
+    display: flex;
+}
+.typing-controls span{
+    margin-left: 7px;
+    font-size: 1.4rem;
+    border-radius: 4px;
+    background: var(--incoming-chat-bg);
+    border: 1px solid var(--incoming-chat-border);
+}
+
+#helpText {
+    font-size: 25px;
+    color: #f3ecec;
+    text-align: center;
+    position: relative;
+    top: 250px;
+    margin-top: 20px;
+}
+
+.ChatGPT-Logo{
+    align-items: center;
+    position: absolute;
+    left: 725px;
+    top: 230px;
+    background-color: white;
+    border-radius: 700px;
+    transform: translateY(-20%);
+}
+
+#helpText.light-mode-text {
+    color: black; /* Text color in light mode */
+}
+
+/* Apply custom border properties to specific elements in light mode */
+.typing-textarea textarea, .typing-controls span {
+    border: 1px solid var(--border-dark); /* Make border darker and slightly thicker */
+}
+
+/* Ensure that only light mode gets the new border styles */
+body.light-mode .typing-textarea textarea, 
+body.light-mode .typing-controls span {
+    border-color: var(--border-dark);
+}
+
+/* Apply custom border properties to chat messages in light mode */
+/* body.light-mode .chat-container .chat.outgoing { */
+    /* border: 1px solid var(--outgoing-chat-border); Make border darker and slightly thicker for outgoing messages */
+/* } */
+
+/* body.light-mode .chat-container .chat.incoming { */
+    /* border: 1px solid var(--incoming-chat-border); Make border darker and slightly thicker for incoming messages */
+/* } */
+
+/* #download-chat {
+    padding: 10px 20px;
+    background-color: green;
+    color: #acacbe;
+    border: none;
+    border-radius: 46px;
+    cursor: pointer;
+    position: relative;
+    left: 1474px;
+    top: 0px;
+    height: 55px;
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#download-chat:hover {
+    background-color: #45a049;
+} */
+
+
+ 
+
+/* .material-symbols-outlined {
+    padding: 10px;
+    background-color: #4CAF50;  
+    color: white;  
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+} */
+
+/* .download:hover {
+    background-color: #45a049;  
+} */
+
+ 
+#download-chat:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+/* Assuming your download button has the ID 'download-chat' */
+#download-chat {
+    background: var(--icon-hover-bg); /* Default background color */
+    color: var(--text-color); /* Default icon color */
+    border: none; /* Default border */
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Hover effect for the download button */
+#download-chat:hover {
+    background: green;  
+}
+
+/* Light mode specific styles */
+.light-mode #download-chat {
+    background: var(--incoming-chat-bg);  
+    color: var(--placeholder-color);  
+    border: 1px solid black;  
+}
+
+/* Light mode hover effect for the download button */
+.light-mode #download-chat:hover {
+    background:  #34354173;  
+}
+
+
+.typing-textarea {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#attach-btn {
+    margin-right: 10px;
+    cursor: pointer;
+    color: var(--icon-color);
+    user-select: none;
+}
+
+.typing-textarea textarea {
+    flex-grow: 1;
+    height: 55px;
+    border: 1px solid var(--incoming-chat-bg);
+    resize: none;
+    padding: 15px;
+    border-radius: 4px;
+    color: var(--text-color);
+    background: var(--incoming-chat-bg);
+    outline: none;
+}
+
+.typing-textarea span {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+}
+
+.typing-textarea textarea:valid ~ span {
+    visibility: visible;
+}
+
+
+  
+
