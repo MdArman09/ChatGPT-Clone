@@ -73,7 +73,9 @@ This project is licensed under the **MIT License**.
 
 ## 💡 Author
 
-Developed by [Md Arman Alam](https://github.com/MdArman09).
+👤 **Md Arman Alam**  
+📧 Email: [md4577963@gmail.com](mailto:md45577963@gmail.com)  
+🔗 GitHub: [MdArman09](https://github.com/MdArman09)
 
 ---
 🌟 **If you like this project, give it a star!** ⭐
